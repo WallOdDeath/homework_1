@@ -22,7 +22,7 @@ var x = 1 + (a *= 2); a *= 2 равносильно написанию а=а*2
 если а и b разных знаков, вывести их сумму; ноль можно считать положительным числом.-->
 <script>
     var a = parseInt(prompt("Введите число а: ", ));
-    var b = parseInt(prompt("Введите число b: ",parseInt() ));
+    var b = parseInt(prompt("Введите число b: ", ));
     if(a>0 && b>0) {
         console.log(a-b);
     }
@@ -78,43 +78,21 @@ var x = 1 + (a *= 2); a *= 2 равносильно написанию а=а*2
  <script>
      function sum(a,b) {
         return(a+b);
-}
-    d = sum(5,6);
-    console.log(d);
-
+    }
     function dif(a,b) {
         return(a-b);
     }
-    q=dif(5,6)
-    console.log(q);
 
     function inc(a,b) {
         return(a*b);
     }
-    w=inc(7,8)
-    console.log(w);
-
     function division(a,b) {
         return(a/b);
     }
-    e=division(9,3);
-    console.log(e);
  </script>
 <!--6. Реализовать функцию с тремя параметрами: function mathOperation(arg1, arg2, operation), где arg1, arg2 – значения аргументов, operation – строка с названием операции. В зависимости от переданного значения операции выполнить одну из арифметических операций (использовать функции из пункта 3) и вернуть полученное значение (использовать switch).-->
     <script>
-        function sum(a,b) {
-        return(a+b);
-        
-        }
-        function dif(a,b) {
-                return(a-b);
-            }
-        function inc(a,b) {
-                return(a*b);
-            }
-        function division(a,b) {
-                return(a/b);
-            }
+    
         function mathOperation(arg1, arg2, operation) {
          switch(operation){
             case("+"):
@@ -136,7 +114,22 @@ var x = 1 + (a *= 2); a *= 2 равносильно написанию а=а*2
             }   
         }
 
-        console.log(mathOperation(5, 10, "*"));
+        console.log(mathOperation(5, 10, "+"));
     </script>
-<!--Сравнить null и 0. Попробуйте объяснить результат..-->>
+<!--7)Сравнить null и 0. Попробуйте объяснить результат..
+null == 0 - по алгоритму сравнения по умолчанию возвращается false
+null>0, null<0 - false в сравнении при преобразовании в тип number null преобразуется в +0
+null >= 0, null <= 0 -true алгорит сравнения такой что если null>0 false, то сравнение null <= 0 автоматически возвращает true
+-->
 <!--8) *С помощью рекурсии организовать функцию возведения числа в степень. Формат: function power(val, pow), где val – заданное число, pow – степень.-->
+<script>
+    function power(val, pow) {
+    if ( pow == 1) {
+    return val;
+ 
+  }
+    return power((val*val),(pow-1)) ;
+   
+}
+console.log(power(4,3))
+</script>
