@@ -71,6 +71,18 @@ var x = 1 + (a *= 2); a *= 2 равносильно написанию а=а*2
         case (15):
         console.log(c);
     }
+    function recSwitch(c) {
+      switch(c) {
+        case (15):
+        console.log(c);
+        break;
+         case (c):
+        console.log(c++);
+          return recSwitch(c)
+       
+    }
+                    }
+recSwitch(c)
 
 </script>
 
@@ -87,6 +99,9 @@ var x = 1 + (a *= 2); a *= 2 равносильно написанию а=а*2
         return(a*b);
     }
     function division(a,b) {
+        if (b==0) {
+            alert('Деление на ноль');
+        }
         return(a/b);
     }
  </script>
