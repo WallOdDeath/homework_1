@@ -40,7 +40,7 @@ function isAnswer(event) {
         alert('Вы ввели недопустимый символ');
         return false;
     }
-    else if (event < 1 || event > 5) {
+    else if (event < 1 || event > 4) {
         alert('Ваше число выходит из допустимого диапозона');
         return false;
     }
