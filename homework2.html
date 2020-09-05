@@ -1,0 +1,150 @@
+<!--1. Дан код:
+var a = 1, b = 1, c, d;
+c = ++a; alert(c);           // 2 префиксное написание позволяет сначала выполнить инкримент и вывести значение инкримента
+d = b++; alert(d);           // 1 постфиксное написание сначала возвращает значение, только потом выполняет инкримент
+c = (2+ ++a); alert(c);      // 5 значение "а" берется уже после инкремента в первой строке, в итоге получается 2+(2+1)=5
+d = (2+ b++); alert(d);      // 4 значение "б" здесь =1, поэтому (2+(1+1))=4
+alert(a);                    // 3 инкримент выполнен 2 раза (1+1), при первом выведении "с", и (2+1) во второй раз
+alert(b);                    // 3 аналагично с а
+Почему код даёт именно такие результаты?
+
+
+2. Чему будет равен x в примере ниже?
+var a = 2;
+var x = 1 + (a *= 2); a *= 2 равносильно написанию а=а*2 
+х=1+(2*2)=5
+
+
+
+3. Объявить две целочисленные переменные a и b и задать им произвольные начальные значения. Затем написать скрипт, который работает по следующему принципу:
+если a и b положительные, вывести их разность;
+если а и b отрицательные, вывести их произведение;
+если а и b разных знаков, вывести их сумму; ноль можно считать положительным числом.-->
+<script>
+    var a = parseInt(prompt("Введите число а: ", ));
+    var b = parseInt(prompt("Введите число b: ", ));
+    if(a>0 && b>0) {
+        console.log(a-b);
+    }
+        else if (a<0 && b<0) {
+            console.log(a*b);
+        }
+        else 
+            console.log(a+b)
+</script>
+
+
+<!--4. Присвоить переменной а значение в промежутке [0..15]. С помощью оператора switch организовать вывод чисел от a до 15.-->
+<script>
+    var c = Math.round(Math.random()*15);
+    switch(c) {
+        case (0):
+        console.log(c++);
+        case (1):
+        console.log(c++);
+        case (2):
+        console.log(c++);
+        case (3):
+        console.log(c++);
+        case (4):
+        console.log(c++);
+        case (5):
+        console.log(c++);
+        case (6):
+        console.log(c++);
+        case (7):
+        console.log(c++);
+        case (8):
+        console.log(c++);
+        case (9):
+        console.log(c++);
+        case (10):
+        console.log(c++);
+        case (11):
+        console.log(c++);
+        case (12):
+        console.log(c++);
+        case (13):
+        console.log(c++);
+        case (14):
+        console.log(c++);
+        case (15):
+        console.log(c);
+    }
+    function recSwitch(c) {
+      switch(c) {
+        case (15):
+        console.log(c);
+        break;
+         case (c):
+        console.log(c++);
+          return recSwitch(c)
+       
+    }
+                    }
+recSwitch(c)
+
+</script>
+
+<!--5. Реализовать основные 4 арифметические операции в виде функций с двумя параметрами. Обязательно использовать оператор return.-->
+ <script>
+     function sum(a,b) {
+        return(a+b);
+    }
+    function dif(a,b) {
+        return(a-b);
+    }
+
+    function inc(a,b) {
+        return(a*b);
+    }
+    function division(a,b) {
+        if (b==0) {
+            alert('Деление на ноль');
+        }
+        return(a/b);
+    }
+ </script>
+<!--6. Реализовать функцию с тремя параметрами: function mathOperation(arg1, arg2, operation), где arg1, arg2 – значения аргументов, operation – строка с названием операции. В зависимости от переданного значения операции выполнить одну из арифметических операций (использовать функции из пункта 3) и вернуть полученное значение (использовать switch).-->
+    <script>
+    
+        function mathOperation(arg1, arg2, operation) {
+         switch(operation){
+            case("+"):
+            sum(arg1, arg2);
+            return sum(arg1, arg2);
+            break;
+            case("-"):
+            dif(arg1, arg2);
+            return dif(arg1, arg2);
+            break;
+            case("*"):
+            inc(arg1, arg2);
+            return inc(arg1, arg2);
+            break;
+            case("/"):
+            division(arg1, arg2);
+            return division(arg1, arg2);
+            break;
+            }   
+        }
+
+        console.log(mathOperation(5, 10, "+"));
+    </script>
+<!--7)Сравнить null и 0. Попробуйте объяснить результат..
+null == 0 - по алгоритму сравнения по умолчанию возвращается false
+null>0, null<0 - false в сравнении при преобразовании в тип number null преобразуется в +0
+null >= 0, null <= 0 -true алгорит сравнения такой что если null>0 false, то сравнение null <= 0 автоматически возвращает true
+-->
+<!--8) *С помощью рекурсии организовать функцию возведения числа в степень. Формат: function power(val, pow), где val – заданное число, pow – степень.-->
+<script>
+    function power(val, pow) {
+    if ( pow == 1) {
+    return val;
+ 
+  }
+    return power((val*val),(pow-1)) ;
+   
+}
+console.log(power(4,3))
+</script>
