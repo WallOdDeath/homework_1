@@ -50,6 +50,7 @@ for(var good of marketArray){
     newImg.src = good.img;
     newImg.style.height = "300px"
     newImg.style.width = "300px";
+    newImg.style.objectFit = "contain";
     var info = document.createElement("p");
     product.appendChild(info);
     info.innerText =good.info;
