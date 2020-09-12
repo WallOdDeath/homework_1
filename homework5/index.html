@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script>
+        var numb = ['',1,2,3,4,5,6,7,8,''];
+        numb.reverse();
+        var column = ['', 'A','B','C','D','E','F','G','H',''];
+        var white =['&#x2656;','&#x2658;','&#x2657;','&#x2655;','&#x2654;','&#x2657;','&#x2658;','&#x2656;'];
+        var black = ['&#x265C;','&#x265E;','&#x265D;','&#x265B;','&#x265A;','&#x265D;','&#x265E;','&#x265C;'];
+        var whitePawn='&#x2659;';
+        var blackPawn='&#x265F;';
+        var table = document.createElement("table");
+        document.querySelector("body").append(table);
+        for(var i=0; i<10; i++){
+            var tr = document.createElement('tr');
+           table.append(tr);
+            for(var j=0; j<10; j++){
+                var td = document.createElement('td');
+                tr.append(td);
+                if(i % 2 !== 0 && j>0 && i<9 && j<9){
+                    td.className="bg-black";
+                    if(j % 2 !== 0){
+                        td.className="bg-white";
+                    }  if(i==1){td.innerHTML=white[j-1]}
+                        if(i==7){td.innerHTML=blackPawn;}
+                } else if (j==0 || j==9) {td.innerText=numb[i];
+                } else if(i==0 || i==9){td.innerText=column[j];
+                } else {
+                    td.className="bg-black";
+                    if(i==8){td.innerHTML=black[j-1];}
+                    if(i==2){td.innerHTML=whitePawn};
+                    if(j % 2 == 0){
+                    td.className="bg-white";
+                } 
+                }
+            }
+        
+        }
+    </script>
+</body>
+</html>
